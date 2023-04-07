@@ -6,11 +6,12 @@ An editor, build and player configuration framework for the Unity game engine.
 
 ### Introduction
 
+
+
+
+
 Unity supports deploying your projects to dozens of platforms and provides a powerful editor to develop your project. Supporting many platforms becomes complicated very fast and adjusting configuration in builds requires a lot of scaffolding.
 
-Trimmer provides that scaffolding as a flexible framework, that allows to quickly adjust the configuration of your project through its whole lifecycle: In the editor during development, during the build process and in the built player.
-
-Trimmer makes it easy to create Options with a few lines of code. It provides a sensible default baseline but allows complex configurations when you need it.
 
 Trimmer is a non-invasive framework. Instead of having to integrate it into your code, you write small Option adapters that hook your existing systems into Trimmer. Options that are not used are not compiled into builds and when a build doesn't contain any Options, Trimmer removes itself from the build completely. Trimmer also makes it easy to conditionally compile your own code.
 
