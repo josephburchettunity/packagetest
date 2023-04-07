@@ -1,88 +1,33 @@
-[![npm package](https://img.shields.io/npm/v/com.{{COMPANY}}.{{REPOSITORY_NAME}})](https://www.npmjs.com/package/com.{{COMPANY}}.{{REPOSITORY_NAME}})
-[![openupm](https://img.shields.io/npm/v/com.{{COMPANY}}.{{REPOSITORY_NAME}}?label=openupm&registry_uri=https://package.openupm.com)](https://openupm.com/packages/com.{{COMPANY}}.{{REPOSITORY_NAME}}/)
-![Tests](https://github.com/{{COMPANY}}/{{REPOSITORY_NAME}}/workflows/Tests/badge.svg)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+<img src="https://sttz.ch/trimmer/images/icon.svg" width="100" />
 
-# {{FRIENDLY_NAME}}
+# Trimmer
 
-{{DESCRIPTION}}
+An editor, build and player configuration framework for the Unity game engine.
 
-- [How to use](#how-to-use)
-- [Install](#install)
-  - [via npm](#via-npm)
-  - [via OpenUPM](#via-openupm)
-  - [via Git URL](#via-git-url)
-  - [Tests](#tests)
-- [Configuration](#configuration)
+### Introduction
 
-<!-- toc -->
+Unity supports deploying your projects to dozens of platforms and provides a powerful editor to develop your project. Supporting many platforms becomes complicated very fast and adjusting configuration in builds requires a lot of scaffolding.
 
-## How to use
+Trimmer provides that scaffolding as a flexible framework, that allows to quickly adjust the configuration of your project through its whole lifecycle: In the editor during development, during the build process and in the built player.
 
-*Work In Progress*
+Trimmer makes it easy to create Options with a few lines of code. It provides a sensible default baseline but allows complex configurations when you need it.
 
-## Install
+Trimmer is a non-invasive framework. Instead of having to integrate it into your code, you write small Option adapters that hook your existing systems into Trimmer. Options that are not used are not compiled into builds and when a build doesn't contain any Options, Trimmer removes itself from the build completely. Trimmer also makes it easy to conditionally compile your own code.
 
-### via npm
+In the editor, Trimmer provides a simple GUI interface to configure your Options for when you play your project and for the different builds your project requires. In the player, Trimmer provides optional loading of a configuration file and a in-game prompt that can configure the same Options as in the editor. Using Build Profiles, you can decide which Options are only available in the editor and which can also be configured in a given build.
 
-Open `Packages/manifest.json` with your favorite text editor. Add a [scoped registry](https://docs.unity3d.com/Manual/upm-scoped.html) and following line to dependencies block:
-```json
-{
-  "scopedRegistries": [
-    {
-      "name": "npmjs",
-      "url": "https://registry.npmjs.org/",
-      "scopes": [
-        "com.{{COMPANY}}"
-      ]
-    }
-  ],
-  "dependencies": {
-    "com.{{COMPANY}}.{{REPOSITORY_NAME}}": "1.0.0"
-  }
-}
-```
-Package should now appear in package manager.
+#### Features
+* Write options easily with only a couple lines of code
+* Visually edit options in the editor and the player
+* Conditionally compile only the features that you need
+* Automate building and post-process your scenes during build
+* Create and build profiles with different settings and features
 
-### via OpenUPM
+### [Full Documentation](https://sttz.ch/trimmer/)
 
-The package is also available on the [openupm registry](https://openupm.com/packages/com.{{COMPANY}}.{{REPOSITORY_NAME}}). You can install it eg. via [openupm-cli](https://github.com/openupm/openupm-cli).
+### Screenshots
 
-```
-openupm add com.{{COMPANY}}.{{REPOSITORY_NAME}}
-```
+<img src="https://sttz.ch/trimmer/images/build_profile.png" width="325" /> <img src="https://sttz.ch/trimmer/images/editor_profile.png" width="325" />
 
-### via Git URL
-
-Open `Packages/manifest.json` with your favorite text editor. Add following line to the dependencies block:
-```json
-{
-  "dependencies": {
-    "com.{{COMPANY}}.{{REPOSITORY_NAME}}": "https://github.com/{{COMPANY}}/{{REPOSITORY_NAME}}.git"
-  }
-}
-```
-
-### Tests
-
-The package can optionally be set as *testable*.
-In practice this means that tests in the package will be visible in the [Unity Test Runner](https://docs.unity3d.com/2017.4/Documentation/Manual/testing-editortestsrunner.html).
-
-Open `Packages/manifest.json` with your favorite text editor. Add following line **after** the dependencies block:
-```json
-{
-  "dependencies": {
-  },
-  "testables": [ "com.{{COMPANY}}.{{REPOSITORY_NAME}}" ]
-}
-```
-
-## Configuration
-
-*Work In Progress*
-
-## License
-
-MIT License
-
-Copyright © {{YEAR}} {{COMPANY_FRIENDLY_NAME}}
+### License
+Trimmer is licensed under the MIT license.
